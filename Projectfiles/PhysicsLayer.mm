@@ -99,6 +99,8 @@ const int TILESET_ROWS = 19;
 
 - (void)addBG
 {
+    glClearColor(102/255.f, 180/255.f, 240/255.f, 1.0f);
+    
     CCSprite *cloud1 = [CCSprite spriteWithFile:@"chmura_lewa.png"];
     CCSprite *cloud2 = [CCSprite spriteWithFile:@"chmury_prawa.png"];
     CCSprite *cloud3 = [CCSprite spriteWithFile:@"chmura_dol.png"];
