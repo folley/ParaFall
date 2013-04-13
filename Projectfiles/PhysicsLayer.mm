@@ -422,10 +422,13 @@ const int TILESET_ROWS = 19;
 - (float)countScale
 {
     float scale = self.palmZPos/100;
-    if (scale > 2)
-        scale = 2;
-    if (scale < 0.5)
-        scale = 0.5;
+    float deviation = 0.3;
+    
+    
+    if (scale > 1 + deviation)
+        scale = 1 + deviation;
+    if (scale < 1 - deviation)
+        scale = 1 - deviation;
     
     return scale;
 }
