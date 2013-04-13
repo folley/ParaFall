@@ -1,13 +1,13 @@
 //
-//  LHObstacle.m
+//  LHRaspberry.h
 //  Test
 //
 //  Created by Michał Śmiałko on 13.04.2013.
 //
 //
 
-#import "LHObstacle.h"
+#import "LHNode.h"
 
-@implementation LHObstacle
+@interface LHRaspberry : LHNode
 
 @end

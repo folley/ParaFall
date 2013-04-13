@@ -14,6 +14,8 @@
 #import "Box2DDebugLayer.h"
 #import "Sample.h"
 #import "LHPlayer.h"
+#import "LHRocket.h"
+#import "LHRaspberry.h"
 
 const float PTM_RATIO = 32.0f;
 
@@ -25,6 +27,7 @@ const int TILESET_ROWS = 19;
 -(void) enableBox2dDebugDrawing;
 -(b2Vec2) toMeters:(CGPoint)point;
 -(CGPoint) toPixels:(b2Vec2)vec;
+
 @end
 
 @implementation PhysicsLayer {
@@ -41,6 +44,8 @@ const int TILESET_ROWS = 19;
 {
 	if ((self = [super init]))
 	{
+        self.nodes = [[NSMutableArray alloc] init];
+        
         [self run];
         [self addBG];
         [self initSettings];
@@ -51,7 +56,8 @@ const int TILESET_ROWS = 19;
 //        [self addContainerForSquares];
         
         [self initPlayer];
-        [self schedule:@selector(addNewObstacle:) interval:2.0 repeat:YES delay:0.0];
+        [self schedule:@selector(addNewObstacle:) interval:3.0];
+        [self schedule:@selector(addNewRaspberries:) interval:7.0];
         
 		[self scheduleUpdate];
         [self schedule:@selector(updateContainerPosition:)];
@@ -64,11 +70,31 @@ const int TILESET_ROWS = 19;
 	return self;
 }
 
-- (void)addNewObstacle:(ccTime)delta
+
+- (void)addNewRaspberries:(ccTime)dt
 {
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    CGFloat randomX = rand() % 1000;
 
-    NSLog(@"BLA");
+    LHRaspberry *point = [[LHRaspberry alloc] init];
+    [point setPosition:CGPointMake(randomX, winSize.height * 0.5)];
+    [point addToLayer:self];
+    [self.nodes addObject:point];
+}
 
+- (void)addNewObstacle:(ccTime)dt
+{
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    
+    // Random obstacle
+    NSArray *obstaclesClasses = @[[LHRocket class]];
+    int randomIdx = rand() % [obstaclesClasses count];
+    LHObstacle *obstacle = [[obstaclesClasses[randomIdx] alloc] init];
+    
+    CGFloat randomX = rand() % 2000;
+    [obstacle setPosition:CGPointMake(randomX, winSize.height/2)];
+    [obstacle addToLayer:self];
+    [self.nodes addObject:obstacle];
 }
 
 - (void)addBG
@@ -99,6 +125,7 @@ const int TILESET_ROWS = 19;
     CGSize winSize = [CCDirector sharedDirector].winSize;
     [[LHPlayer mainPlayer] addToLayer:self];
     [[LHPlayer mainPlayer] setPosition:CGPointMake(winSize.width/2, winSize.height * 0.7)];
+    [self.nodes addObject:[LHPlayer mainPlayer]];
 }
 
 - (void)initSettings
@@ -440,8 +467,10 @@ const int TILESET_ROWS = 19;
 			sprite.rotation = CC_RADIANS_TO_DEGREES(angle) * -1;
 		}
 	}
-    
-    [[LHPlayer mainPlayer] update:delta];
+ 
+    for (LHNode *node in self.nodes) {
+        [node update:delta];
+    }
 }
 
 - (void)updateContainerPosition:(ccTime)dt
@@ -469,7 +498,6 @@ const int TILESET_ROWS = 19;
 
 - (void)scalePlayer:(ccTime)dt
 {
-    NSLog(@"123");
     [[LHPlayer mainPlayer] setScale:[self countScale]];
 }
 

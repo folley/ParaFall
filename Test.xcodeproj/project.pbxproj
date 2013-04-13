@@ -11,6 +11,9 @@
 		90582C661719839100636D7A /* LHPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C641719839100636D7A /* LHPlayer.m */; };
 		90582C691719897400636D7A /* LHObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C681719897400636D7A /* LHObstacle.m */; };
 		90582C6C1719899600636D7A /* LHNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C6B1719899600636D7A /* LHNode.m */; };
+		90582C721719A32D00636D7A /* LHRocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C711719A32D00636D7A /* LHRocket.m */; };
+		90582C741719A59700636D7A /* rakieta.png in Resources */ = {isa = PBXBuildFile; fileRef = 90582C731719A59700636D7A /* rakieta.png */; };
+		90582C7A1719AC3F00636D7A /* LHRaspberry.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C791719AC3F00636D7A /* LHRaspberry.m */; };
 		DC193EB713B692D100500B56 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC193EB313B6872600500B56 /* GLES-Render.mm */; };
 		DC193EB813B692D100500B56 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC193EB313B6872600500B56 /* GLES-Render.mm */; };
 		DC193EBC13B6956F00500B56 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC193EBB13B6956F00500B56 /* ContactListener.mm */; };
@@ -77,8 +80,6 @@
 		E684D0C6171989910081D9F8 /* chmury_prawa.png in Resources */ = {isa = PBXBuildFile; fileRef = E684D0C4171989910081D9F8 /* chmury_prawa.png */; };
 		E684D0C8171989970081D9F8 /* chmura_lewa.png in Resources */ = {isa = PBXBuildFile; fileRef = E684D0C7171989970081D9F8 /* chmura_lewa.png */; };
 		E684D0C9171989970081D9F8 /* chmura_lewa.png in Resources */ = {isa = PBXBuildFile; fileRef = E684D0C7171989970081D9F8 /* chmura_lewa.png */; };
-		E684D0CB171989A80081D9F8 /* rakieta.png in Resources */ = {isa = PBXBuildFile; fileRef = E684D0CA171989A80081D9F8 /* rakieta.png */; };
-		E684D0CC171989A80081D9F8 /* rakieta.png in Resources */ = {isa = PBXBuildFile; fileRef = E684D0CA171989A80081D9F8 /* rakieta.png */; };
 		E684D0CE171989FC0081D9F8 /* malina1.png in Resources */ = {isa = PBXBuildFile; fileRef = E684D0CD171989FC0081D9F8 /* malina1.png */; };
 		E684D0CF171989FC0081D9F8 /* malina1.png in Resources */ = {isa = PBXBuildFile; fileRef = E684D0CD171989FC0081D9F8 /* malina1.png */; };
 		E684D0D117198A020081D9F8 /* malina2.png in Resources */ = {isa = PBXBuildFile; fileRef = E684D0D017198A020081D9F8 /* malina2.png */; };
@@ -111,6 +112,11 @@
 		90582C681719897400636D7A /* LHObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHObstacle.m; sourceTree = "<group>"; };
 		90582C6A1719899600636D7A /* LHNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHNode.h; sourceTree = "<group>"; };
 		90582C6B1719899600636D7A /* LHNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHNode.m; sourceTree = "<group>"; };
+		90582C701719A32D00636D7A /* LHRocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRocket.h; sourceTree = "<group>"; };
+		90582C711719A32D00636D7A /* LHRocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHRocket.m; sourceTree = "<group>"; };
+		90582C731719A59700636D7A /* rakieta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rakieta.png; sourceTree = "<group>"; };
+		90582C781719AC3F00636D7A /* LHRaspberry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRaspberry.h; sourceTree = "<group>"; };
+		90582C791719AC3F00636D7A /* LHRaspberry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHRaspberry.m; sourceTree = "<group>"; };
 		DC193EB213B6872600500B56 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		DC193EB313B6872600500B56 /* GLES-Render.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		DC193EBA13B6956F00500B56 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
@@ -177,7 +183,6 @@
 		E684D0C1171989890081D9F8 /* chmura_dol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chmura_dol.png; sourceTree = "<group>"; };
 		E684D0C4171989910081D9F8 /* chmury_prawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chmury_prawa.png; sourceTree = "<group>"; };
 		E684D0C7171989970081D9F8 /* chmura_lewa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chmura_lewa.png; sourceTree = "<group>"; };
-		E684D0CA171989A80081D9F8 /* rakieta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rakieta.png; sourceTree = "<group>"; };
 		E684D0CD171989FC0081D9F8 /* malina1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malina1.png; sourceTree = "<group>"; };
 		E684D0D017198A020081D9F8 /* malina2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malina2.png; sourceTree = "<group>"; };
 		E684D0D317198A080081D9F8 /* malina3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malina3.png; sourceTree = "<group>"; };
@@ -353,6 +358,10 @@
 				90582C6B1719899600636D7A /* LHNode.m */,
 				E684D0D91719AA8F0081D9F8 /* LHContact.h */,
 				E684D0DA1719AA8F0081D9F8 /* LHContact.m */,
+				90582C701719A32D00636D7A /* LHRocket.h */,
+				90582C711719A32D00636D7A /* LHRocket.m */,
+				90582C781719AC3F00636D7A /* LHRaspberry.h */,
+				90582C791719AC3F00636D7A /* LHRaspberry.m */,
 				E6B895351707892C00460521 /* leapFiles */,
 				DC2A3EC2149A30B400EF78B0 /* Box2DDebugLayer.h */,
 				DC2A3EC3149A30B400EF78B0 /* Box2DDebugLayer.mm */,
@@ -377,7 +386,7 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E684D0CA171989A80081D9F8 /* rakieta.png */,
+				90582C731719A59700636D7A /* rakieta.png */,
 				E684D0C7171989970081D9F8 /* chmura_lewa.png */,
 				E684D0C4171989910081D9F8 /* chmury_prawa.png */,
 				E684D0D617198A0E0081D9F8 /* malina4.png */,
@@ -523,7 +532,6 @@
 				E684D0C2171989890081D9F8 /* chmura_dol.png in Resources */,
 				E684D0C5171989910081D9F8 /* chmury_prawa.png in Resources */,
 				E684D0C8171989970081D9F8 /* chmura_lewa.png in Resources */,
-				E684D0CB171989A80081D9F8 /* rakieta.png in Resources */,
 				E684D0CE171989FC0081D9F8 /* malina1.png in Resources */,
 				E684D0D117198A020081D9F8 /* malina2.png in Resources */,
 				E684D0D417198A080081D9F8 /* malina3.png in Resources */,
@@ -552,11 +560,11 @@
 				E684D0C3171989890081D9F8 /* chmura_dol.png in Resources */,
 				E684D0C6171989910081D9F8 /* chmury_prawa.png in Resources */,
 				E684D0C9171989970081D9F8 /* chmura_lewa.png in Resources */,
-				E684D0CC171989A80081D9F8 /* rakieta.png in Resources */,
 				E684D0CF171989FC0081D9F8 /* malina1.png in Resources */,
 				E684D0D217198A020081D9F8 /* malina2.png in Resources */,
 				E684D0D517198A080081D9F8 /* malina3.png in Resources */,
 				E684D0D817198A0E0081D9F8 /* malina4.png in Resources */,
+				90582C741719A59700636D7A /* rakieta.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +604,8 @@
 				90582C661719839100636D7A /* LHPlayer.m in Sources */,
 				90582C691719897400636D7A /* LHObstacle.m in Sources */,
 				90582C6C1719899600636D7A /* LHNode.m in Sources */,
+				90582C721719A32D00636D7A /* LHRocket.m in Sources */,
+				90582C7A1719AC3F00636D7A /* LHRaspberry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,6 +26,7 @@ enum
 @property CGPoint palmPos;
 @property float palmZPos;
 
+@property (nonatomic, strong) NSMutableArray *nodes;
 @end
 
 @interface MLContainerSprite : CCSprite
