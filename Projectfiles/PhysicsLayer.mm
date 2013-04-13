@@ -50,6 +50,7 @@ const int TILESET_ROWS = 19;
         [self addContainerForSquares];
         
         [self initPlayer];
+        [self schedule:@selector(addNewObstacle:) interval:2.0 repeat:YES delay:0.0];
         
 		[self scheduleUpdate];
         [self schedule:@selector(updateContainerPosition:)];
@@ -62,11 +63,20 @@ const int TILESET_ROWS = 19;
 	return self;
 }
 
+- (void)addNewObstacle:(ccTime)delta
+{
+
+    NSLog(@"BLA");
+
+}
+
+
+
 - (void)initPlayer
 {
     CGSize winSize = [CCDirector sharedDirector].winSize;
     [[LHPlayer mainPlayer] addToLayer:self];
-    [[LHPlayer mainPlayer] setPosition:CGPointMake(winSize.width/2, winSize.height/2)];
+    [[LHPlayer mainPlayer] setPosition:CGPointMake(winSize.width/2, winSize.height * 0.7)];
 }
 
 - (void)initSettings
@@ -408,6 +418,8 @@ const int TILESET_ROWS = 19;
 			sprite.rotation = CC_RADIANS_TO_DEGREES(angle) * -1;
 		}
 	}
+    
+    [[LHPlayer mainPlayer] update:delta];
 }
 
 - (void)updateContainerPosition:(ccTime)dt

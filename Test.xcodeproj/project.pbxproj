@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		90582C651719839100636D7A /* fishkite.png in Resources */ = {isa = PBXBuildFile; fileRef = 90582C621719839100636D7A /* fishkite.png */; };
 		90582C661719839100636D7A /* LHPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C641719839100636D7A /* LHPlayer.m */; };
+		90582C691719897400636D7A /* LHObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C681719897400636D7A /* LHObstacle.m */; };
+		90582C6C1719899600636D7A /* LHNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C6B1719899600636D7A /* LHNode.m */; };
 		DC193EB713B692D100500B56 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC193EB313B6872600500B56 /* GLES-Render.mm */; };
 		DC193EB813B692D100500B56 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC193EB313B6872600500B56 /* GLES-Render.mm */; };
 		DC193EBC13B6956F00500B56 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC193EBB13B6956F00500B56 /* ContactListener.mm */; };
@@ -104,6 +106,10 @@
 		90582C621719839100636D7A /* fishkite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fishkite.png; path = Projectfiles/fishkite.png; sourceTree = SOURCE_ROOT; };
 		90582C631719839100636D7A /* LHPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHPlayer.h; path = Projectfiles/LHPlayer.h; sourceTree = SOURCE_ROOT; };
 		90582C641719839100636D7A /* LHPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LHPlayer.m; path = Projectfiles/LHPlayer.m; sourceTree = SOURCE_ROOT; };
+		90582C671719897400636D7A /* LHObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHObstacle.h; sourceTree = "<group>"; };
+		90582C681719897400636D7A /* LHObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHObstacle.m; sourceTree = "<group>"; };
+		90582C6A1719899600636D7A /* LHNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHNode.h; sourceTree = "<group>"; };
+		90582C6B1719899600636D7A /* LHNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHNode.m; sourceTree = "<group>"; };
 		DC193EB213B6872600500B56 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		DC193EB313B6872600500B56 /* GLES-Render.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		DC193EBA13B6956F00500B56 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
@@ -338,6 +344,10 @@
 				90582C621719839100636D7A /* fishkite.png */,
 				90582C631719839100636D7A /* LHPlayer.h */,
 				90582C641719839100636D7A /* LHPlayer.m */,
+				90582C671719897400636D7A /* LHObstacle.h */,
+				90582C681719897400636D7A /* LHObstacle.m */,
+				90582C6A1719899600636D7A /* LHNode.h */,
+				90582C6B1719899600636D7A /* LHNode.m */,
 				E6B895351707892C00460521 /* leapFiles */,
 				DC2A3EC2149A30B400EF78B0 /* Box2DDebugLayer.h */,
 				DC2A3EC3149A30B400EF78B0 /* Box2DDebugLayer.mm */,
@@ -578,6 +588,8 @@
 				E6B895411708656B00460521 /* PhysicsLayer1.mm in Sources */,
 				E6B8954A1709C7A100460521 /* PhysicsLayer2.mm in Sources */,
 				90582C661719839100636D7A /* LHPlayer.m in Sources */,
+				90582C691719897400636D7A /* LHObstacle.m in Sources */,
+				90582C6C1719899600636D7A /* LHNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
