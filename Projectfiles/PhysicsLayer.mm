@@ -13,6 +13,7 @@
 #import "PhysicsLayer.h"
 #import "Box2DDebugLayer.h"
 #import "Sample.h"
+#import "LHPlayer.h"
 
 const float PTM_RATIO = 32.0f;
 
@@ -48,6 +49,8 @@ const int TILESET_ROWS = 19;
         [self addContainerForCircles];
         [self addContainerForSquares];
         
+        [self initPlayer];
+        
 		[self scheduleUpdate];
         [self schedule:@selector(updateContainerPosition:)];
         [self schedule:@selector(addFallingObject:) interval:3.];
@@ -55,6 +58,13 @@ const int TILESET_ROWS = 19;
 	}
 
 	return self;
+}
+
+- (void)initPlayer
+{
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    [[LHPlayer mainPlayer] addToLayer:self];
+    [[LHPlayer mainPlayer] setPosition:CGPointMake(winSize.width/2, winSize.height/2)];
 }
 
 - (void)initSettings
@@ -83,8 +93,10 @@ const int TILESET_ROWS = 19;
     contactListener = new ContactListener();
     world->SetContactListener(contactListener);
     
-    float widthInMeters = 1440 / PTM_RATIO;
-    float heightInMeters = 900 / PTM_RATIO;
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    
+    float widthInMeters = winSize.width / PTM_RATIO;
+    float heightInMeters = winSize.height / PTM_RATIO;
     b2Vec2 lowerLeftCorner = b2Vec2(0, 0);
     b2Vec2 lowerRightCorner = b2Vec2(widthInMeters, 0);
     b2Vec2 upperLeftCorner = b2Vec2(0, heightInMeters);
