@@ -19,11 +19,21 @@
     return player;
 }
 
-
 - (void)setScale:(float)scale
 {
     self.sprite.scale = scale;
 }
+
+- (void)highlightFor:(float)time
+{
+    NSLog(@"animate");
+}
+
+- (void)flashingFor:(float)time
+{
+    NSLog(@"flashing");
+}
+
 - (id)init
 {
     if (self = [super init]) {
@@ -36,5 +46,7 @@
 {
     self.position = CGPointMake(self.position.x, self.position.y - 40*dt);
 }
+
+
 
 @end

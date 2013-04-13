@@ -7,6 +7,9 @@
 
 #import "ContactListener.h"
 #import "cocos2d.h"
+#import "LHObstacle.h"
+#import "LHPlayer.h"
+#import "LHContact.h"
 
 void ContactListener::BeginContact(b2Contact* contact)
 {
@@ -16,7 +19,29 @@ void ContactListener::BeginContact(b2Contact* contact)
 	CCSprite* spriteB = (__bridge CCSprite*)bodyB->GetUserData();
 	
 	if (spriteA != NULL && spriteB != NULL) {
-
+        
+        if ([spriteA isKindOfClass:[LHObstacle class]] &&
+            [spriteB isKindOfClass:[LHPlayer class]]) {
+            
+           
+            
+            NSLog(@"123");
+            
+        }
+        
+        if ([spriteB isKindOfClass:[LHObstacle class]] &&
+            [spriteA isKindOfClass:[LHPlayer class]]) {
+            
+            
+            NSLog(@"321");
+            
+        }
+        
+        
+        
+        
+        
+        
 	}
 }
 

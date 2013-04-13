@@ -13,5 +13,8 @@
 
 + (id)mainPlayer;
 
+- (void)highlightFor:(float)time;
+- (void)flashingFor:(float)time;
+
 @end
 
