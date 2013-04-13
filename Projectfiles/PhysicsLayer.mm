@@ -15,6 +15,7 @@
 #import "Sample.h"
 #import "LHPlayer.h"
 #import "LHRocket.h"
+#import "LHRaspberry.h"
 
 const float PTM_RATIO = 32.0f;
 
@@ -56,6 +57,7 @@ const int TILESET_ROWS = 19;
         
         [self initPlayer];
         [self schedule:@selector(addNewObstacle:) interval:3.0];
+        [self schedule:@selector(addNewRaspberries:) interval:7.0];
         
 		[self scheduleUpdate];
         [self schedule:@selector(updateContainerPosition:)];
@@ -68,14 +70,31 @@ const int TILESET_ROWS = 19;
 	return self;
 }
 
+
+- (void)addNewRaspberries:(ccTime)dt
+{
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    CGFloat randomX = rand() % 1000;
+
+    LHRaspberry *point = [[LHRaspberry alloc] init];
+    [point setPosition:CGPointMake(randomX, winSize.height * 0.5)];
+    [point addToLayer:self];
+    [self.nodes addObject:point];
+}
+
 - (void)addNewObstacle:(ccTime)dt
 {
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    LHRocket *rocket = [[LHRocket alloc] init];
-    CGFloat randomX = rand() % 500;
-    [rocket setPosition:CGPointMake(randomX, winSize.height/2)];
-    [rocket addToLayer:self];
-    [self.nodes addObject:rocket];
+    
+    // Random obstacle
+    NSArray *obstaclesClasses = @[[LHRocket class]];
+    int randomIdx = rand() % [obstaclesClasses count];
+    LHObstacle *obstacle = [[obstaclesClasses[randomIdx] alloc] init];
+    
+    CGFloat randomX = rand() % 2000;
+    [obstacle setPosition:CGPointMake(randomX, winSize.height/2)];
+    [obstacle addToLayer:self];
+    [self.nodes addObject:obstacle];
 }
 
 - (void)addBG
