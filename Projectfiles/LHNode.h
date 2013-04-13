@@ -14,5 +14,6 @@
 @property (nonatomic) CGPoint position;
 
 - (void)addToLayer:(CCLayer *)layer;
+-(void)update:(ccTime)dt;
 
 @end

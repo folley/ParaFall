@@ -14,6 +14,7 @@
 #import "Box2DDebugLayer.h"
 #import "Sample.h"
 #import "LHPlayer.h"
+#import "LHRocket.h"
 
 const float PTM_RATIO = 32.0f;
 
@@ -25,6 +26,7 @@ const int TILESET_ROWS = 19;
 -(void) enableBox2dDebugDrawing;
 -(b2Vec2) toMeters:(CGPoint)point;
 -(CGPoint) toPixels:(b2Vec2)vec;
+
 @end
 
 @implementation PhysicsLayer {
@@ -41,6 +43,8 @@ const int TILESET_ROWS = 19;
 {
 	if ((self = [super init]))
 	{
+        self.nodes = [[NSMutableArray alloc] init];
+        
         [self run];
         [self addBG];
         [self initSettings];
@@ -51,7 +55,7 @@ const int TILESET_ROWS = 19;
 //        [self addContainerForSquares];
         
         [self initPlayer];
-        [self schedule:@selector(addNewObstacle:) interval:2.0 repeat:YES delay:0.0];
+        [self schedule:@selector(addNewObstacle:) interval:3.0];
         
 		[self scheduleUpdate];
         [self schedule:@selector(updateContainerPosition:)];
@@ -64,11 +68,14 @@ const int TILESET_ROWS = 19;
 	return self;
 }
 
-- (void)addNewObstacle:(ccTime)delta
+- (void)addNewObstacle:(ccTime)dt
 {
-
-    NSLog(@"BLA");
-
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    LHRocket *rocket = [[LHRocket alloc] init];
+    CGFloat randomX = rand() % 500;
+    [rocket setPosition:CGPointMake(randomX, winSize.height/2)];
+    [rocket addToLayer:self];
+    [self.nodes addObject:rocket];
 }
 
 - (void)addBG
@@ -99,6 +106,7 @@ const int TILESET_ROWS = 19;
     CGSize winSize = [CCDirector sharedDirector].winSize;
     [[LHPlayer mainPlayer] addToLayer:self];
     [[LHPlayer mainPlayer] setPosition:CGPointMake(winSize.width/2, winSize.height * 0.7)];
+    [self.nodes addObject:[LHPlayer mainPlayer]];
 }
 
 - (void)initSettings
@@ -440,8 +448,10 @@ const int TILESET_ROWS = 19;
 			sprite.rotation = CC_RADIANS_TO_DEGREES(angle) * -1;
 		}
 	}
-    
-    [[LHPlayer mainPlayer] update:delta];
+ 
+    for (LHNode *node in self.nodes) {
+        [node update:delta];
+    }
 }
 
 - (void)updateContainerPosition:(ccTime)dt
@@ -469,7 +479,6 @@ const int TILESET_ROWS = 19;
 
 - (void)scalePlayer:(ccTime)dt
 {
-    NSLog(@"123");
     [[LHPlayer mainPlayer] setScale:[self countScale]];
 }
 

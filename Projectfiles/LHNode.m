@@ -21,4 +21,9 @@
     [layer addChild:self.sprite];
 }
 
+-(void)update:(ccTime)dt
+{
+    // ... you can override this method
+}
+
 @end
