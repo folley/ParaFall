@@ -24,6 +24,7 @@ enum
 }
 
 @property CGPoint palmPos;
+@property float palmZPos;
 
 @end
 

@@ -53,7 +53,9 @@ const int TILESET_ROWS = 19;
         
 		[self scheduleUpdate];
         [self schedule:@selector(updateContainerPosition:)];
+        [self schedule:@selector(updatePlayerPosition:)];
         [self schedule:@selector(addFallingObject:) interval:3.];
+        [self schedule:@selector(scalePlayer:)];
         // leap update - (void)onFrame:(NSNotification *)notification;
 	}
 
@@ -410,7 +412,28 @@ const int TILESET_ROWS = 19;
 
 - (void)updateContainerPosition:(ccTime)dt
 {
-    container->SetTransform(b2Vec2(self.palmPos.x/PTM_RATIO, self.palmPos.y/PTM_RATIO), 0);
+//    container->SetTransform(b2Vec2(self.palmPos.x/PTM_RATIO, self.palmPos.y/PTM_RATIO), 0);
+}
+- (void)updatePlayerPosition:(ccTime)dt
+{
+    [[LHPlayer mainPlayer] setPosition:ccp(self.palmPos.x, self.palmPos.y)];
+}
+
+- (float)countScale
+{
+    float scale = self.palmZPos/100;
+    if (scale > 2)
+        scale = 2;
+    if (scale < 0.5)
+        scale = 0.5;
+    
+    return scale;
+}
+
+- (void)scalePlayer:(ccTime)dt
+{
+    NSLog(@"123");
+    [[LHPlayer mainPlayer] setScale:[self countScale]];
 }
 
 - (void)addFallingObject:(ccTime)dt
@@ -477,6 +500,7 @@ const int TILESET_ROWS = 19;
     if ([[frame hands] count] != 0) {
         LeapHand *hand = [[frame hands] objectAtIndex:0];
         self.palmPos = [self convertLeapPalmPositionToScreenPos:[hand palmPosition]];
+        self.palmZPos = [hand palmPosition].z;
     }
 }
 

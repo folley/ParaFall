@@ -32,6 +32,11 @@
     self.sprite.position = position;
 }
 
+- (void)setScale:(float)scale
+{
+    self.sprite.scale = scale;
+}
+
 - (id)init
 {
     if (self = [super init]) {
