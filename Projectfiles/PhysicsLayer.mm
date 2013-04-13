@@ -42,6 +42,7 @@ const int TILESET_ROWS = 19;
 	if ((self = [super init]))
 	{
         [self run];
+        [self addBG];
         [self initSettings];
         [self addPhysics];
         [self createTextures];
@@ -70,6 +71,27 @@ const int TILESET_ROWS = 19;
 
 }
 
+- (void)addBG
+{
+    CCSprite *cloud1 = [CCSprite spriteWithFile:@"chmura_lewa.png"];
+    CCSprite *cloud2 = [CCSprite spriteWithFile:@"chmury_prawa.png"];
+    CCSprite *cloud3 = [CCSprite spriteWithFile:@"chmura_dol.png"];
+    
+//    CCLayer *clouds = [[CCLayer alloc] init];
+//    clouds.position = CGPointZero;
+    
+    [self addChild:cloud1];
+    [self addChild:cloud2];
+    [self addChild:cloud3];
+    
+    
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    [cloud1 setPosition:ccp(winSize.width/4,winSize.height*3/4)];
+    [cloud2 setPosition:ccp(winSize.width*3/4,winSize.height*3/4)];
+    [cloud3 setPosition:ccp(winSize.width/2,winSize.height/7)];
+    
+//    [self addChild:clouds];
+}
 
 
 - (void)initPlayer

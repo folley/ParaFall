@@ -55,7 +55,7 @@ local config =
 		-- Mac OS specific settings
 		AutoScale = NO,
 		AcceptsMouseMovedEvents = NO,
-		EnableFullScreen = NO,
+		EnableFullScreen = YES,
 	},
 	
 	-- you can create your own config sections using the same mechanism and use KKConfig to access the parameters
