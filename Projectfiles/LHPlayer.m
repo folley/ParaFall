@@ -8,12 +8,6 @@
 
 #import "LHPlayer.h"
 
-@interface LHPlayer ()
-
-@property (nonatomic, strong) CCSprite *sprite;
-
-@end
-
 @implementation LHPlayer
 
 + (id)mainPlayer;
@@ -26,17 +20,10 @@
 }
 
 
-- (void)setPosition:(CGPoint)position
-{
-    _position = position;
-    self.sprite.position = position;
-}
-
 - (void)setScale:(float)scale
 {
     self.sprite.scale = scale;
 }
-
 - (id)init
 {
     if (self = [super init]) {
@@ -45,17 +32,9 @@
     return self;
 }
 
-
-- (void)addToLayer:(CCLayer *)layer
+-(void)update:(ccTime)dt
 {
-    [layer addChild:self.sprite];
-}
-
--(void) update:(ccTime)dt
-{
-    self.position = CGPointMake(self.position.x, self.position.y - 20*dt);
-    
+    self.position = CGPointMake(self.position.x, self.position.y - 40*dt);
 }
 
 @end
-
