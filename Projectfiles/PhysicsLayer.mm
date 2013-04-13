@@ -45,16 +45,16 @@ const int TILESET_ROWS = 19;
         [self initSettings];
         [self addPhysics];
         [self createTextures];
-        [self addLeapContainer];
-        [self addContainerForCircles];
-        [self addContainerForSquares];
+//        [self addLeapContainer];
+//        [self addContainerForCircles];
+//        [self addContainerForSquares];
         
         [self initPlayer];
         
 		[self scheduleUpdate];
         [self schedule:@selector(updateContainerPosition:)];
         [self schedule:@selector(updatePlayerPosition:)];
-        [self schedule:@selector(addFallingObject:) interval:3.];
+//        [self schedule:@selector(addFallingObject:) interval:3.];
         [self schedule:@selector(scalePlayer:)];
         // leap update - (void)onFrame:(NSNotification *)notification;
 	}
