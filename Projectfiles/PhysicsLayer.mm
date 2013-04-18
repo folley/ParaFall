@@ -473,7 +473,7 @@ const int TILESET_ROWS = 19;
         [node update:delta];
     }
     
-//    [self updateCamera:delta];
+    [self updateCamera:delta];
 }
 
 - (void)initCamera
@@ -493,10 +493,14 @@ const int TILESET_ROWS = 19;
     float eyeZ = 0;
 
     [self.camera eyeX:&eyeX eyeY:&eyeY eyeZ:&eyeZ];
-    [self.camera setEyeX:eyeX + 100*dt eyeY:eyeY eyeZ:eyeZ + 0*dt];
-    
+    [self.camera setEyeX:eyeX eyeY:eyeY + 100*dt eyeZ:eyeZ];
+
     [self.camera centerX:&eyeX centerY:&eyeY centerZ:&eyeZ];
-    [self.camera setCenterX:eyeX + 100*dt centerY:eyeY centerZ:eyeZ];
+    [self.camera setCenterX:eyeX centerY:eyeY + 100*dt centerZ:eyeZ];
+    
+    // TODO: move somewhere else
+    LHPlayer *player = [LHPlayer mainPlayer];
+    [player setPosition:CGPointMake(player.position.x, player.position.y + 100*dt)];
 }
 
 - (void)updateContainerPosition:(ccTime)dt
@@ -505,6 +509,7 @@ const int TILESET_ROWS = 19;
 }
 - (void)updatePlayerPosition:(ccTime)dt
 {
+    // TODO: convert palmPos to game view
     [[LHPlayer mainPlayer] setPosition:ccp(self.palmPos.x, self.palmPos.y)];
 }
 

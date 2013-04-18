@@ -44,7 +44,7 @@
 
 -(void)update:(ccTime)dt
 {
-    self.position = CGPointMake(self.position.x, self.position.y - 40*dt);
+//    self.position = CGPointMake(self.position.x, self.position.y - 40*dt);
 }
 
 
