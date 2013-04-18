@@ -8,27 +8,20 @@
 
 #import "LHRocket.h"
 
-@interface LHRocket ()
-@property (nonatomic) CGFloat dividiation;
-@property (nonatomic) CGFloat time;
-@end
-
 @implementation LHRocket
 
 - (id)init
 {
     if (self = [super init]) {
-        self.time = 0;
         self.sprite = [CCSprite spriteWithFile:@"rakieta.png"];
+        
+        CCMoveBy *moveUp = [CCMoveBy actionWithDuration:0.8 position:CGPointMake(0, 20)];
+        CCMoveBy *moveDown = [CCMoveBy actionWithDuration:0.8 position:CGPointMake(0, -20)];
+        CCSequence *seq = [CCSequence actions:moveUp, moveDown, nil];
+        CCRepeatForever *repeatSeq = [CCRepeatForever actionWithAction:seq];
+        [self.sprite runAction:repeatSeq];
     }
     return self;
-}
-
--(void)update:(ccTime)dt
-{
-    self.time += dt;
-    self.dividiation = 2*sin(self.time);
-    [self setPosition:CGPointMake(self.position.x + 200 * dt, self.position.y + self.dividiation)];
 }
 
 @end

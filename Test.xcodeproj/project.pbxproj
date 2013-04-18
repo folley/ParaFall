@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		90582C651719839100636D7A /* fishkite.png in Resources */ = {isa = PBXBuildFile; fileRef = 90582C621719839100636D7A /* fishkite.png */; };
 		90582C661719839100636D7A /* LHPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C641719839100636D7A /* LHPlayer.m */; };
 		90582C691719897400636D7A /* LHObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C681719897400636D7A /* LHObstacle.m */; };
 		90582C6C1719899600636D7A /* LHNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C6B1719899600636D7A /* LHNode.m */; };
 		90582C721719A32D00636D7A /* LHRocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C711719A32D00636D7A /* LHRocket.m */; };
 		90582C741719A59700636D7A /* rakieta.png in Resources */ = {isa = PBXBuildFile; fileRef = 90582C731719A59700636D7A /* rakieta.png */; };
 		90582C7A1719AC3F00636D7A /* LHRaspberry.m in Sources */ = {isa = PBXBuildFile; fileRef = 90582C791719AC3F00636D7A /* LHRaspberry.m */; };
+		9095B19E1719BDC900E74BBC /* fishkite.png in Resources */ = {isa = PBXBuildFile; fileRef = 9095B19D1719BDC900E74BBC /* fishkite.png */; };
+		9095B19F1719BDC900E74BBC /* fishkite.png in Resources */ = {isa = PBXBuildFile; fileRef = 9095B19D1719BDC900E74BBC /* fishkite.png */; };
 		DC193EB713B692D100500B56 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC193EB313B6872600500B56 /* GLES-Render.mm */; };
 		DC193EB813B692D100500B56 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC193EB313B6872600500B56 /* GLES-Render.mm */; };
 		DC193EBC13B6956F00500B56 /* ContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC193EBB13B6956F00500B56 /* ContactListener.mm */; };
@@ -105,7 +106,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		90582C621719839100636D7A /* fishkite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fishkite.png; path = Projectfiles/fishkite.png; sourceTree = SOURCE_ROOT; };
 		90582C631719839100636D7A /* LHPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LHPlayer.h; path = Projectfiles/LHPlayer.h; sourceTree = SOURCE_ROOT; };
 		90582C641719839100636D7A /* LHPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LHPlayer.m; path = Projectfiles/LHPlayer.m; sourceTree = SOURCE_ROOT; };
 		90582C671719897400636D7A /* LHObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHObstacle.h; sourceTree = "<group>"; };
@@ -117,6 +117,7 @@
 		90582C731719A59700636D7A /* rakieta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rakieta.png; sourceTree = "<group>"; };
 		90582C781719AC3F00636D7A /* LHRaspberry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHRaspberry.h; sourceTree = "<group>"; };
 		90582C791719AC3F00636D7A /* LHRaspberry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHRaspberry.m; sourceTree = "<group>"; };
+		9095B19D1719BDC900E74BBC /* fishkite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fishkite.png; sourceTree = "<group>"; };
 		DC193EB213B6872600500B56 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		DC193EB313B6872600500B56 /* GLES-Render.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		DC193EBA13B6956F00500B56 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
@@ -349,7 +350,6 @@
 		DCC1A38C13A94F1A005BD75D /* Projectfiles */ = {
 			isa = PBXGroup;
 			children = (
-				90582C621719839100636D7A /* fishkite.png */,
 				90582C631719839100636D7A /* LHPlayer.h */,
 				90582C641719839100636D7A /* LHPlayer.m */,
 				90582C671719897400636D7A /* LHObstacle.h */,
@@ -386,6 +386,7 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9095B19D1719BDC900E74BBC /* fishkite.png */,
 				90582C731719A59700636D7A /* rakieta.png */,
 				E684D0C7171989970081D9F8 /* chmura_lewa.png */,
 				E684D0C4171989910081D9F8 /* chmury_prawa.png */,
@@ -536,6 +537,7 @@
 				E684D0D117198A020081D9F8 /* malina2.png in Resources */,
 				E684D0D417198A080081D9F8 /* malina3.png in Resources */,
 				E684D0D717198A0E0081D9F8 /* malina4.png in Resources */,
+				9095B19E1719BDC900E74BBC /* fishkite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +558,6 @@
 				E605D9FF170B12A300C29929 /* circle2.png in Resources */,
 				E605DA02170B1E5500C29929 /* black.png in Resources */,
 				E605DA05170B1F6600C29929 /* white.png in Resources */,
-				90582C651719839100636D7A /* fishkite.png in Resources */,
 				E684D0C3171989890081D9F8 /* chmura_dol.png in Resources */,
 				E684D0C6171989910081D9F8 /* chmury_prawa.png in Resources */,
 				E684D0C9171989970081D9F8 /* chmura_lewa.png in Resources */,
@@ -565,6 +566,7 @@
 				E684D0D517198A080081D9F8 /* malina3.png in Resources */,
 				E684D0D817198A0E0081D9F8 /* malina4.png in Resources */,
 				90582C741719A59700636D7A /* rakieta.png in Resources */,
+				9095B19F1719BDC900E74BBC /* fishkite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

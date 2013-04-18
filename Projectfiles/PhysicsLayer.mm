@@ -73,11 +73,10 @@ const int TILESET_ROWS = 19;
 
 - (void)addNewRaspberries:(ccTime)dt
 {
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
     CGFloat randomX = rand() % 1000;
-
+    CGFloat randomY = rand() % 1000;
     LHRaspberry *point = [[LHRaspberry alloc] init];
-    [point setPosition:CGPointMake(randomX, winSize.height * 0.5)];
+    [point setPosition:CGPointMake(randomX, randomY)];
     [point addToLayer:self];
     [self.nodes addObject:point];
 }
@@ -473,6 +472,31 @@ const int TILESET_ROWS = 19;
     for (LHNode *node in self.nodes) {
         [node update:delta];
     }
+    
+//    [self updateCamera:delta];
+}
+
+- (void)initCamera
+{
+    float eyeX = 0;
+    float eyeY = 0;
+    float eyeZ = 0;
+    
+    [self.camera eyeX:&eyeX eyeY:&eyeY eyeZ:&eyeZ];
+    [self.camera setEyeX:eyeX eyeY:eyeY eyeZ:eyeZ + 100];
+}
+
+- (void)updateCamera:(ccTime)dt
+{
+    float eyeX = 0;
+    float eyeY = 0;
+    float eyeZ = 0;
+
+    [self.camera eyeX:&eyeX eyeY:&eyeY eyeZ:&eyeZ];
+    [self.camera setEyeX:eyeX + 100*dt eyeY:eyeY eyeZ:eyeZ + 0*dt];
+    
+    [self.camera centerX:&eyeX centerY:&eyeY centerZ:&eyeZ];
+    [self.camera setCenterX:eyeX + 100*dt centerY:eyeY centerZ:eyeZ];
 }
 
 - (void)updateContainerPosition:(ccTime)dt
